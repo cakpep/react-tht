@@ -24,7 +24,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await api.getBallotData();
-      setBallotData(result.items || [])
+      setBallotData(result?.items || [])
     }
     fetchData()
   }, []);
@@ -46,12 +46,13 @@ const Home = () => {
       {ballotData.map(({
         id, title, items
       }) => (
-        <NomineeWraper key={`nominee-wrapper-${id}`}>
+        <NomineeWraper key={`nominee-wrapper-${id}`} data-testid={`nominee-wrapper-${id}`}>
           <Category title={title} key={id} />
           <BallotWraper key={`ballot-wrapper-${id}`}>
             {items.map((item) => (
               <Ballot
                 key={item.id}
+                id={item.id}
                 title={item.title}
                 photoUrL={item.photoUrL}
                 isSelected={isNomineeSelected(id, item)}
@@ -61,16 +62,21 @@ const Home = () => {
           </BallotWraper>
         </NomineeWraper>
       ))}
-      <FloatingButton onClick={toggleModal}>
+      <FloatingButton
+        data-testid={`submit-nominee-btn`}
+        onClick={toggleModal}
+      >
         <FloatingButtonLabel>Submit</FloatingButtonLabel>
       </FloatingButton>
-      <Modal
-        openModal={isOpen}
-        handleClose={toggleModal}
-        title="Success"
-      >
-        <TableResult items={selectedBallotData} />
-      </Modal>
+      {/* for tests purpose to make the test easily */}
+      {isOpen && (
+        <Modal
+          openModal={isOpen}
+          handleClose={toggleModal}
+          title="Success"
+        >
+          <TableResult items={selectedBallotData} />
+        </Modal>)}
     </AppLayout>
   );
 }

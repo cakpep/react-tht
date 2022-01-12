@@ -9,6 +9,7 @@ import {
 
 const Ballot = ({
   isSelected,
+  id,
   title,
   photoUrL,
   onSelect
@@ -18,6 +19,7 @@ const Ballot = ({
       <NomineeTitle>{title}</NomineeTitle>
       <div><NomineePhoto src={photoUrL} /></div>
       <SelectButton
+        data-testid={`select-btn-${id}`}
         isSelected={isSelected}
         onClick={onSelect}
       >

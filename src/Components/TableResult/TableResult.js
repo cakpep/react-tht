@@ -21,7 +21,7 @@ const TableResult = ({ items }) => {
             </TableThead>
             <TableTbody>
                 {Object.keys(items).map((key) => (
-                    <TableTr key={key}>
+                    <TableTr key={key} data-testid={`table-result-${items[key]?.title}`}>
                         <TableTd>{items[key]?.categoryTile}</TableTd>
                         <TableTd>{items[key]?.title}</TableTd>
                         <TableTd center>

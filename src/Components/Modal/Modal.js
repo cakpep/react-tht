@@ -8,9 +8,16 @@ import {
 } from './styles';
 
 const Modal = ({ openModal, title, handleClose, children }) => (
-    <ModalWrapper id="myModal" isOpen={openModal}>
+    <ModalWrapper
+        id="myModal"
+        data-testid={`modal-nominee-results`}
+        isOpen={openModal}
+    >
         <ModalContent>
-            <ModalClose onClick={handleClose}>&times;</ModalClose>
+            <ModalClose
+                onClick={handleClose}
+                data-testid={`modal-nominee-close-button`}
+            >&times;</ModalClose>
             <ModalTitle>{title}</ModalTitle>
             <ContentWrapper>
                 {children}
