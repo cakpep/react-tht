@@ -65,6 +65,11 @@ Starts the server which allows the user to access the ballot API.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `yarn test:coverage`
+
+Launches the test runner to check the unit tests code coveraeg.\
+See the section about [coverage](https://jestjs.io/docs/cli) for more information.
+
 ### `yarn build`
 
 Builds the app for production to the `build` folder.\
