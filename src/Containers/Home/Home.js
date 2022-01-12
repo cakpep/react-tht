@@ -17,7 +17,7 @@ import {
   NomineeWraper
 } from './styles';
 
-const App = () => {
+const Home = () => {
   const [ballotData, setBallotData] = useState([]);
   const [selectedBallotData, setSelectedBallotData] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -75,4 +75,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default Home;
