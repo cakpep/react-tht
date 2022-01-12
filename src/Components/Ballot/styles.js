@@ -8,7 +8,7 @@ const getSelectedBackground = (
   isSelected, theme
 ) => (isSelected ? theme.colors.secondaryGreen : theme.colors.primaryGreen);
 
-export const NomineeWrapper = styled.ul`
+export const NomineeWrapper = styled.div`
   padding: 0;
   margin: 0;
   list-style: none;
@@ -16,7 +16,7 @@ export const NomineeWrapper = styled.ul`
   justify-content: center;
 `;
 
-export const NomineeItem = styled.li`
+export const NomineeItem = styled.div`
   background: ${({ theme, isSelected }) => getSelectedBackground(isSelected, theme)};
   min-width: 300px;
   max-width: 300px;
@@ -26,6 +26,18 @@ export const NomineeItem = styled.li`
   position: relative;
   &:hover {
     background: ${({ theme }) => theme.colors.secondaryGreen};
+  }
+  @media only screen and (min-width: 400px) {
+    min-width: 388px;
+    max-width: 388px;
+  }
+  @media only screen and (min-width: 600px) {
+    min-width: 300px;
+    max-width: 300px;
+  }
+  @media only screen and (min-width: 900px) {
+    min-width: 300px;
+    max-width: 300px;
   }
 `;
 

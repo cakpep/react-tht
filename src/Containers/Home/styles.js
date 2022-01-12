@@ -6,6 +6,15 @@ export const AppLayout = styled.div`
   overflow: auto;
   padding: 30px 20px 80px 20px;
   box-sizing: border-box;
+  @media only screen and (min-width: 400px) {
+    max-width: 450px;
+  }
+  @media only screen and (min-width: 600px) {
+    max-width: 670px;
+  }
+  @media only screen and (min-width: 900px) {
+    max-width: 980px;
+  }
 `;
 
 export const NomineeWraper = styled.div`
