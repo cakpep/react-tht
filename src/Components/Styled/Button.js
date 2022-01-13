@@ -31,6 +31,12 @@ export const FloatingButton = styled(Button)`
   padding: 20px;
   border: 0;
   outline: none;
+  @media only screen and (max-width: 400px) {
+    border: 1px solid ${({ theme }) => theme.colors.secondaryGreen};
+    width: 100%;
+    bottom: 0;
+    right: 0;
+  }
 `;
 
 export const FloatingButtonLabel = styled.label`

@@ -23,7 +23,7 @@ const Ballot = ({
         isSelected={isSelected}
         onClick={onSelect}
       >
-        Select
+        {isSelected ? 'Selected' : 'Select'}
       </SelectButton>
     </NomineeItem>
   </NomineeWrapper>

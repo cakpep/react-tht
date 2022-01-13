@@ -8,6 +8,9 @@ export const Wrapper = styled(TextExtraLarge)`
   align-items: center;
   justify-content: center;
   margin-bottom: 80px;
+  @media only screen and (max-width: 400px) {
+    margin-bottom: 40px;
+  }
 `;
 
 export const TextHeader = styled.span`
