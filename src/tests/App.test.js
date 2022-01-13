@@ -1,5 +1,5 @@
 import React from 'react';
-import { waitFor, fireEvent, act } from "@testing-library/react";
+import { waitFor, fireEvent } from "@testing-library/react";
 import { renderTest } from '../Utils/renderTest';
 import App from '../App';
 import api from '../Api/Api';
@@ -56,9 +56,7 @@ describe('AWARDS HOME PAGE', () => {
     // the modal should not yet in the document
     await waitFor(() => expect(queryByTestId('modal-nominee-results')).not.toBeTruthy());
 
-    act(() => {
-      fireEvent.click(queryByTestId('select-btn-ayam-id'));
-    });
+    fireEvent.click(queryByTestId('select-btn-ayam-id'));
 
     // click submit to show the modal
     fireEvent.click(queryByTestId('submit-nominee-btn'));
@@ -76,9 +74,7 @@ describe('AWARDS HOME PAGE', () => {
 
 
     // select another nominee
-    act(() => {
-      fireEvent.click(queryByTestId('select-btn-kambing-id'));
-    });
+    fireEvent.click(queryByTestId('select-btn-kambing-id'));
 
     fireEvent.click(queryByTestId('submit-nominee-btn'));
     // the modal should be in the document since the user already submit the selected nominee

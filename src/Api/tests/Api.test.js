@@ -1,18 +1,14 @@
 import api from '../Api';
 
-beforeEach(() => {
-    jest.spyOn(global, 'fetch').mockResolvedValue({
-        json: jest.fn().mockResolvedValue({ items: [] })
-    })
-});
-
-afterEach(() => {
-    jest.restoreAllMocks();
-});
+global.fetch = jest.fn(() => Promise.resolve({
+    json: jest.fn(() => ({ items: [] })),
+}));
 
 describe('API Test', () => {
     test('get ballon data', async () => {
         const results = await api.getBallotData();
         expect(results.items).toStrictEqual([]);
+        expect(global.fetch).toHaveBeenCalled();
+        expect(global.fetch).toHaveBeenCalledWith('/api/getBallotData');
     });
 });

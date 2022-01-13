@@ -1,14 +1,17 @@
 module.exports = {
   collectCoverageFrom: [
-    "src/**/*.{js,jsx}",
+    "src/**/**/*.{js,jsx}",
     "src/Components/*.{js,jsx}",
-    "src/Containers/*.{js,jsx}",
-    "!src/Assets/*",
+    "src/Containers/**/*.{js,jsx}",
+    "!src/**/**/styles.{js,jsx}",
+    "!src/**/**/index.{js,jsx}",
+    "!src/Assets/**",
     "!src/index.js",
-    "!src/utils/renderTest.js",
     "!src/reportWebVitals.js",
-    '!src/**/mocks/*.{js,jsx}',
-    "!jest.config.js*",
+    "!jest.config.js",
+    '!src/Utils/renderTest.js',
+    '!src/Styles/*.{js,jsx}',
+    '!src/**/mocks/**',
   ],
   moduleDirectories: ['node_modules', 'src'],
   moduleNameMapper: {
@@ -17,4 +20,10 @@ module.exports = {
       '<rootDir>/src/Utils/mocks/image.js',
   },
   setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
+  coverageReporters: [
+    "lcov",
+    "html",
+    "text",
+    "text-summary"
+  ],
 };

@@ -18,8 +18,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test:coverage": "react-scripts test --coverage",
+    "test": "jest --silent",
+    "test:coverage": "jest --coverage --silent",
+    "test:clean": "rm -Rf ./coverage",
     "eject": "react-scripts eject",
     "backend": "nodemon ./api/index.js"
   },
